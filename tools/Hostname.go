@@ -43,12 +43,12 @@ func IpAddr() string {
 		}
 	}
 	if len(strs) == 0 {
-		return GetLocalIP();
+		return getLocalIP();
 	}
 	return strs[0]
 }
 
-func GetLocalIP() string {
+func getLocalIP() string {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
 		return ""
