@@ -19,8 +19,8 @@ func (c *Client) RegisterInstance(appId string, instanceInfo *InstanceInfo) erro
 		return err
 	}
 	//common.Corn("1/30 * * * * *", func() {
-	res, err := c.Post(path, body)
+	_, err = c.Post(path, body)
 	//})
-	fmt.Println(string(res.Body))
+	//fmt.Println(string(res.Body))
 	return err
 }
