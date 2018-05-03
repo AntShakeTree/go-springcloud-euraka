@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"fmt"
+	
 )
 
 func (c *Client) RegisterInstance(appId string, instanceInfo *InstanceInfo) error {
