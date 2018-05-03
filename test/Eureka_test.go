@@ -2,12 +2,11 @@ package test
 
 import (
 	"github.com/AntShakeTree/go-springcloud-euraka/eureka"
-	"github.com/AntShakeTree/go-springcloud-euraka/logger"
 	"github.com/AntShakeTree/go-springcloud-euraka/tools"
 	"testing"
 )
 
-var Err = logger.Error
+
 
 func TestEureka(t *testing.T) {
 	client := eureka.NewClient([]string{
