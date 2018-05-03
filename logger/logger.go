@@ -9,14 +9,10 @@ import (
 
 )
 
-var (
-	path    string
-	lcorn   string
-	lformat string
-)
 
 
-func CreateLogFile() {
+
+func CreateLogFile(path,lcorn, lformat string) {
 	//
 	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
@@ -24,10 +20,10 @@ func CreateLogFile() {
 	}
 	multi := io.MultiWriter(file, os.Stdout)
 	initLogger(multi, multi, multi, multi)
-	loggerCorn(lcorn, lformat)
+	loggerCorn(path,lcorn, lformat)
 }
 
-func loggerCorn(corn string, fomat string) {
+func loggerCorn(path,corn , fomat string) {
 	c := cron.New()
 	spec := corn
 	c.AddFunc(spec, func() {
