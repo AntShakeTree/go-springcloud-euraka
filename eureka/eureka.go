@@ -1,10 +1,11 @@
 package eureka
 
-import "github.com/AntShakeTree/go-springcloud-euraka/logger"
+import (
+	"fmt"
+)
 
 
-var INFO =logger.Info
-var Error =logger.Error
+
 
 
 //
@@ -18,7 +19,7 @@ func Eureka(server, hostname, app, instancesId, ip string, port int) {
 	client.LocalInstanceInfo=*instance
 	er:=client.SendHeartbeat(instance.App, instancesId) // say to eureka th
 	if er!=nil{
-		Error.Fatal(er)
+		fmt.Errorf("%v",er)
 	}
 }
 

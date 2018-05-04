@@ -382,12 +382,12 @@ func (c *Client) SendRequest(rr *RawRequest) (*RawResponse, error) {
 			u, err := resp.Location()
 
 			if err != nil {
-				info.Printf("%v", err)
+				fmt.Printf("%v", err)
 			} else {
 				// Update cluster leader based on redirect location
 				// because it should point to the leader address
 				c.Cluster.updateLeaderFromURL(u)
-				info.Printf("recv.response.relocate " + u.String())
+				fmt.Printf("recv.response.relocate " + u.String())
 			}
 			resp.Body.Close()
 			continue
@@ -426,7 +426,7 @@ func DefaultCheckRetry(cluster *Cluster, numReqs int, lastResp http.Response,
 
 	}
 
-	warn.Printf("bad response status code %d", code)
+	fmt.Printf("bad response status code %d", code)
 	return nil
 }
 
