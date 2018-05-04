@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "YdmVupbfsA50ujrzFSZgXWIMnx4=",
+			"path": "github.com/robfig/cron",
+			"revision": "da757ee1bf6762b4f03db86a7f043c43ca23866e",
+			"revisionTime": "2018-04-18T11:45:06Z"
+		}
+	],
+	"rootPath": "github.com/AntShakeTree/go-springcloud-euraka"
+}
