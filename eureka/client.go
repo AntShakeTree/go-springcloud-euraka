@@ -15,10 +15,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AntShakeTree/go-springcloud-euraka/logger"
+	"fmt"
 )
 
-var info = logger.Info
 
 const (
 	defaultBufferSize = 10
@@ -281,7 +280,7 @@ func (c *Client) internalSyncCluster(machines []string) bool {
 			// the first one in the machine list is the leader
 			c.Cluster.switchLeader(0)
 
-			info.Println("sync.machines " + strings.Join(c.Cluster.Machines, ", "))
+			fmt.Println("sync.machines " + strings.Join(c.Cluster.Machines, ", "))
 			return true
 		}
 	}

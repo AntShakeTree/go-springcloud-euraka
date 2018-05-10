@@ -4,10 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/AntShakeTree/go-springcloud-euraka/logger"
 )
 
-var warn = logger.Warning
 
 const (
 	ErrCodeEurekaNotReachable = 501
@@ -44,7 +42,7 @@ func handleError(b []byte) error {
 
 	err := json.Unmarshal(b, eurekaErr)
 	if err != nil {
-		warn.Printf("cannot unmarshal eureka error: %v", err)
+		fmt.Printf("cannot unmarshal eureka error: %v", err)
 		return err
 	}
 

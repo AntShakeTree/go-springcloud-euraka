@@ -3,6 +3,7 @@ package eureka
 import (
 	"net/url"
 	"strings"
+	"fmt"
 )
 
 type Cluster struct {
@@ -25,7 +26,7 @@ func NewCluster(machines []string) *Cluster {
 
 // switchLeader switch the current leader to machines[num]
 func (cl *Cluster) switchLeader(num int) {
-	info.Printf("switch.leader[from %v to %v]",
+	fmt.Printf("switch.leader[from %v to %v]",
 		cl.Leader, cl.Machines[num])
 
 	cl.Leader = cl.Machines[num]
@@ -36,7 +37,7 @@ func (cl *Cluster) updateFromStr(machines string) {
 }
 
 func (cl *Cluster) updateLeader(leader string) {
-	info.Printf("update.leader[%s,%s]", cl.Leader, leader)
+	fmt.Printf("update.leader[%s,%s]", cl.Leader, leader)
 	cl.Leader = leader
 }
 
